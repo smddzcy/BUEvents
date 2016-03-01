@@ -1,0 +1,15 @@
+todo: implement the web ui
+    -   basic ui with columns √ /nav √ / footer
+        bs template from creative-tim √
+        columns with "hipster as fuck cards" √
+            details page with popup - fullscreen √
+    -   REST api
+    -   filtering - by date, category, club (maybe more ?)
+    -   login with twitter,facebook (fuck this)
+        to check in to an event & see who else's going
+todo: implement the club admin page ui
+    -   add event, see old events, see attendees and stuff. simple admin panel
+todo: give each club a default category
+todo: auto generate the access token - it must be renewed every 60 days and hardcoded
+todo: js - instantiate end time datepicker with start time on default
+todo: js - dropdown checkbox, change dropdown header menu

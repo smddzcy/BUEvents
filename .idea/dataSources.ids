@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - buevents@localhost" uuid="8e45ceb2-b119-47dd-b555-81d97541b33f">
+    <database-info product="MySQL" version="5.7.11" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="buevents"/>
+      <table id="2" parent="1" name="events"/>
+      <table id="3" parent="1" name="pages"/>
+      <column id="4" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="5" parent="2" name="name">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="6" parent="2" name="description">
+        <data-type>varchar(10000)</data-type>
+      </column>
+      <column id="7" parent="2" name="start_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="8" parent="2" name="end_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="9" parent="2" name="owner">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="10" parent="2" name="timezone">
+        <data-type>varchar(20)</data-type>
+        <default-expression>&apos;Europe/Istanbul&apos;</default-expression>
+      </column>
+      <column id="11" parent="2" name="cover">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="12" parent="2" name="ticket_uri">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="13" parent="2" name="attending_count">
+        <data-type>int(10) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="14" parent="2" name="category">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="15" parent="2" name="place">
+        <data-type>varchar(1000)</data-type>
+        <default-expression>&apos;&apos;-1&apos;&apos;</default-expression>
+      </column>
+      <column id="16" parent="2" name="fbpageid">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="17" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="18" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="19" parent="3" name="fbpageid">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="20" parent="3" name="username">
+        <comment>default: _{fbpageid}_</comment>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="21" parent="3" name="password">
+        <comment>default: __{fbpageid}__</comment>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <key id="22" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
