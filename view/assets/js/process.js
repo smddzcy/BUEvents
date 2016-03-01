@@ -55,10 +55,13 @@ function appendEvents(events) {
             var hour = date[1].split(":");
             hour = hour[0] + ":" + hour[1];
             var pattern = "<!-- event -->" +
-                '<div class="col-xs-12 col-sm-12 col-md-6"><div class="card text-center" data-background="image" style="background-image: url(' + events[i]["cover"]["source"] + '); background-size: contain; background-position: 50% 50%;background-repeat:no-repeat;">' +
+                '<div class="col-xs-12 col-sm-12 col-md-6"><div class="card text-center" data-background="image">' +
+                '<div style="background: url(' + events[i]["cover"]["source"] + ') repeat-x; background-size: cover; width:100%; height:100%; position:absolute; opacity: 0.6; -webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);"></div>' + // blurry back bg
+                '<div style="background-image: url(' + events[i]["cover"]["source"] + '); background-size: contain; background-position: 50% 50%; background-repeat:no-repeat; width:100%; height:100%; position:absolute;"></div>' + // front bg
                 '<div class="header title title-modern text-left" style="margin-left:20px;">' + parseDate(date[0]) + ' - ' + hour + '</div>' +
                 '<div class="footer btn-center">' +
-                '<h4 class="title title-modern">' + events[i]["name"] + '<br/><i style="opacity:0.8">by ' + events[i]["owner"].capitalize() + '</i></h4>';
+                '<h4 class="title title-modern" style="margin-bottom:5px">' + events[i]["name"] + '</h4>' +
+                '<h5 class="title title-modern" style="margin-top:0"><i style="opacity:0.8">by ' + events[i]["owner"].capitalize() + '</i></h5>';
             if (events[i]["ticket_uri"] == null)
                 events[i]["ticket_uri"] = "http://www.facebook.com/" + events[i]["fbpageid"];
             pattern += '<a class="btn btn-neutral btn-round btn-modern" href="' + events[i]["ticket_uri"] + '" target="_blank">Get a Ticket</a>' +
