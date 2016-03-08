@@ -163,8 +163,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     border-width: 1px;
     background-color: transparent;
     font-weight: 400;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
+    opacity: 1;
+    filter: alpha(opacity=100);
     padding: 8px 16px;
     border-color: #888888;
     color: #888888;
@@ -1185,7 +1185,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .card > .title {
     margin: 0;
-    padding: 30px 0 0;
+    padding: 20px 0 0;
 }
 
 .card .content {
@@ -1317,7 +1317,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .card[data-background="image"] a:hover,
 .card[data-background="image"] a:focus, .card[data-background="color"] a:hover,
 .card[data-background="color"] a:focus {
-    color: #FFFFFF;
+    color: #66615B;
 }
 
 .card[data-background="image"] .icon i, .card[data-background="color"] .icon i {
@@ -1334,8 +1334,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .card[data-background="image"] .filter {
-    opacity: 0.50;
-    filter: alpha(opacity=50.0);
+    opacity: 0.30;
+    filter: alpha(opacity=30.0);
 }
 
 .card[data-background="image"]:hover .filter {

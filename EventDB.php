@@ -23,17 +23,18 @@ class EventDB
         "club" => null,
         "date" => null
     ];
+    private $overwrite = true;
 
     public function __construct()
     {
         try {
             self::$db = new PDO(Config::DB_TYPE . ":host=" . Config::DB_HOST . ";port=" . Config::DB_PORT . ";dbname=" . Config::DB_NAME . ";charset=" . Config::DB_CHARSET, Config::DB_USER, Config::DB_PASS);
+            self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Database connection error: " . $e->getMessage() . PHP_EOL;
             echo "Stack trace:" . $e->getTrace() . PHP_EOL;
         }
-        self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        self::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
 
     /**
@@ -49,7 +50,8 @@ class EventDB
         $categoryCount = 0;
         $clubCount = 0;
 
-        $sql = "SELECT * FROM events WHERE ";
+        $sql = /** @lang text */
+            "SELECT * FROM events WHERE ";
         if (!is_null($this->filterSql["club"])) {
             $clubs = (array)$this->filterSql["club"];
             $clubCount = count($clubs);
@@ -75,19 +77,18 @@ class EventDB
             }
         }
         if (!is_null($this->filterSql["date"])) {
-            if (substr(trim($sql), -5) != "WHERE") $sql .= "AND (";
+            if (substr(trim($sql), -5) != "WHERE") $sql .= "AND ";
             $dateStart = $this->filterSql["date"]["start"];
-            if (is_null($dateStart)) $dateStart = "1996-12-30 23:59:59";
+            if (empty($dateStart)) $dateStart = date("Y-m-d") . " 00:00:01";
             else if (strpos(" ", $dateStart) === false) { // doesn't include h:m:s precision
                 $dateStart .= " 00:00:01";
             }
-
             $dateEnd = $this->filterSql["date"]["end"];
-            if (is_null($dateEnd)) $dateEnd = "2020-12-30 23:59:59";
+            if (empty($dateEnd)) $dateEnd = "2100-12-30 23:59:59";
             else if (strpos(" ", $dateEnd) === false) { // doesn't include h:m:s precision
                 $dateEnd .= " 23:59:59";
             }
-            $sql .= "start_time BETWEEN :date AND :date2) ";
+            $sql .= "(start_time BETWEEN :date AND :date2) ";
         }
         $sql .= $this->sortQueries[$this->sortQuery];
         $query = self::$db->prepare($sql);
@@ -151,14 +152,14 @@ class EventDB
     }
 
     /**
-     * Get club names (facebook page id/names) from database
+     * Get club facebook page ids and page names from database
      *
-     * @return array Club names (facebook page id/names)
+     * @return array Facebook page id => page name key-val paired array of clubs
      */
-    public function getClubNames()
+    public function getClubs()
     {
-        $query = self::$db->query("SELECT fbpageid FROM pages");
-        return $query->fetchAll(PDO::FETCH_COLUMN);
+        $query = self::$db->query("SELECT fbpageid,fbpagename FROM pages");
+        return $query->fetchAll(PDO::FETCH_NUM);
     }
 
     /**
@@ -183,7 +184,7 @@ class EventDB
     {
         $query = self::$db->prepare("SELECT * FROM events WHERE start_time BETWEEN :date AND :date2 {$this->sortQueries[$this->sortQuery]}");
         $query->bindValue(":date", $dateStart);
-        if (is_null($dateEnd)) $dateEnd = "2020-12-30 23:59:59";
+        if (is_null($dateEnd)) $dateEnd = "2100-12-30 23:59:59";
         else if (strpos(" ", $dateEnd) === false) { // doesn't include h:m:s precision
             $dateEnd .= " 23:59:59";
         }
@@ -235,9 +236,15 @@ class EventDB
      */
     public function saveEvent(string $pageName, Event $event)
     {
-        if ($this->getEvent($event->getId()) !== false) return false;
-        $fields = [":id", ":name", ":description", ":start_time", ":end_time", ":place", ":owner", ":category", ":cover", ":attending_count", ":ticket_uri", ":timezone"];
-        $query = self::$db->prepare("INSERT INTO events (fbpageid,id,name,description,start_time,end_time,place,owner,category,cover,attending_count,ticket_uri,timezone) VALUES (:pageName," . implode(",", $fields) . ")");
+        if ($this->getEvent($event->getId()) !== false) {
+            if ($this->overwrite) {
+                $query = self::$db->prepare("UPDATE events SET fbpageid = :pageName, name = :name, description = :description, start_time = :start_time, end_time = :end_time, place = :place, owner = :owner, category = :category, cover = :cover, attending_count = :attending_count, ticket_uri = :ticket_uri, timezone = :timezone WHERE id = :id");
+            } else {
+                return false;
+            }
+        } else {
+            $query = self::$db->prepare("INSERT INTO events (fbpageid,id,name,description,start_time,end_time,place,owner,category,cover,attending_count,ticket_uri,timezone) VALUES (:pageName,:id,:name,:description,:start_time,:end_time,:place,:owner,:category,:cover,:attending_count,:ticket_uri,:timezone)");
+        }
         try {
             $res = $query->execute([
                 ":pageName" => $pageName,
@@ -256,7 +263,7 @@ class EventDB
             ]);
         } catch (PDOException $e) {
             echo "Error on database query while saving the event: " . $e->getMessage() . PHP_EOL;
-            echo "Stack trace: " . $e->getTrace() . PHP_EOL;
+            echo "Stack trace: " . json_encode($e->getTrace(), JSON_PRETTY_PRINT) . PHP_EOL;
         }
         return (isset($res) && $res === true) ? true : false;
     }
@@ -302,15 +309,15 @@ class EventDB
     }
 
     /**
-     * @param int $limit1
-     * @param int $limit2
+     * @param int $start
+     * @param int $count
      * @return array|bool
      */
-    public function getEventsBetween(int $limit1, int $limit2)
+    public function getEvents(int $start, int $count)
     {
-        $query = self::$db->prepare("SELECT * FROM events {$this->sortQueries[$this->sortQuery]} LIMIT :lim1,:lim2");
-        $query->bindValue(":lim1", $limit1, PDO::PARAM_INT);
-        $query->bindValue(":lim2", $limit2, PDO::PARAM_INT);
+        $query = self::$db->prepare("SELECT * FROM events {$this->sortQueries[$this->sortQuery]} LIMIT :start,:count");
+        $query->bindValue(":start", $start, PDO::PARAM_INT);
+        $query->bindValue(":count", $count, PDO::PARAM_INT);
         if ($query->execute() === false) return false;
         return $this->unserializeArray($query->fetchAll());
     }
@@ -333,7 +340,7 @@ class EventDB
      *
      * @return int Total event count, or -1 on FAILURE
      */
-    public function getTotalEventCount(): int
+    public function getTotalEventCount()
     {
         $query = self::$db->prepare("SELECT COUNT(*) FROM events");
         if ($query->execute() === false) return -1;
@@ -351,7 +358,7 @@ class EventDB
      */
     public function searchEventByName(String $name)
     {
-        $query = self::$db->prepare('SELECT * FROM events WHERE name LIKE :name');
+        $query = self::$db->prepare("SELECT * FROM events WHERE name LIKE :name {$this->sortQueries[$this->sortQuery]}");
         $query->bindValue(":name", "%{$name}%");
         if ($query->execute() === false) return false;
         return $this->unserializeArray($query->fetchAll());
@@ -369,28 +376,6 @@ class EventDB
     }
 
     /**
-     * Sort event array by date, "belki lazım olur"
-     *
-     * @param array $events
-     * @return array
-     */
-    private function sortByDate(array $events): array
-    {
-        uasort($events, function ($a, $b) {
-            if (!is_array($a) && !is_array($b)) return 0;
-            if (!array_key_exists("start_time", $a)) {
-                if (!array_key_exists("start_time", $b)) return 0;
-                else return -1;
-            }
-            $a = strtotime($a["start_time"]);
-            $b = strtotime($b["start_time"]);
-            if ($a == $b) return 0;
-            return ($a < $b) ? -1 : 1;
-        });
-        return $events;
-    }
-
-    /**
      * Unserialize every possible element on an array
      *
      * @param array $a
@@ -400,7 +385,7 @@ class EventDB
     {
         foreach ($a as $i => &$el) {
             if (is_array($el)) $el = $this->unserializeArray($el);
-            else if ($this->isSerial($el)){
+            else if ($this->isSerial($el)) {
                 $a[$i] = unserialize($el);
             }
         }
@@ -416,5 +401,14 @@ class EventDB
     public function isSerial($string)
     {
         return (@unserialize($string) !== false);
+    }
+
+    /**
+     * @param bool $overwrite If true, save methods update existing event data on the database
+     *
+     */
+    public function setOverwrite(boolean $overwrite)
+    {
+        $this->overwrite = $overwrite;
     }
 }

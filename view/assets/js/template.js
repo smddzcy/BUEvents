@@ -82,6 +82,28 @@ $(document).ready(function () {
     //  Init video card actions
     gsdk.initVideoCards();
 
+    // prevent dropdown to close on inside-click
+
+    $(".dropdown-toggle").on('click', function () {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('body').on('click', function (e) {
+        var dd = $('.dropdown');
+        if (!dd.is(e.target)
+            && dd.has(e.target).length === 0
+            && $('.open').has(e.target).length === 0
+        ) {
+            dd.removeClass('open');
+        }
+    });
+
+    // popup for share buttons
+    $('a.popup').on('click', function () {
+        var newwindow = window.open($(this).attr('href'), '', 'height=400,width=600');
+        if (window.focus) newwindow.focus();
+        return false;
+    });
 });
 
 // activate collapse right menu when the windows is resized 
@@ -348,7 +370,7 @@ examples = {
             zoom: 14,
             center: myLatlng,
             scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-        }
+        };
         var map = new google.maps.Map(document.getElementById("contactUsMap"), mapOptions);
 
         var marker = new google.maps.Marker({

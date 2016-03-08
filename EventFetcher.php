@@ -10,6 +10,9 @@ class EventFetcher
 
     public function __construct()
     {
+        if (date_default_timezone_set(Config::DEFAULT_TIMEZONE) === false) {
+            throw new Exception("Timezone is not valid, change it in Config.php");
+        }
         self::$curlHandler = new CurlRequest();
         self::$db = new EventDB();
     }
@@ -47,6 +50,7 @@ class EventFetcher
 
     /**
      * Fetch all events from all known clubs' Facebook pages
+     *
      */
     public function fetchAllEvents()
     {
@@ -54,10 +58,12 @@ class EventFetcher
         foreach ($fbPageNames as $fbPageName) {
             $this->fetchEvents($fbPageName);
         }
+        return $this->events;
     }
 
     /**
      * Save fetched events to database
+     *
      */
     public function saveEvents()
     {
@@ -66,20 +72,21 @@ class EventFetcher
 
     /**
      * Clear fetched events from memory
+     *
      */
     public function clearEvents()
     {
         $this->events = [];
     }
 
-    public function autoload()
+    /**
+     * Get database object
+     *
+     * @return EventDB
+     */
+    public function getDB()
     {
-        spl_autoload_register('autoload', true);
+        return self::$db;
     }
 
 }
-/*
-$f = new EventFetcher();
-$f->fetchAllEvents();
-$f->saveEvents();
-*/

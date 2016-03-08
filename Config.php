@@ -3,6 +3,7 @@
 class Config
 {
     const BASEDIR = "/Library/WebServer/Documents/BUEvents";
+    const DEFAULT_TIMEZONE = "Europe/Istanbul";
 
     /**
      * DB Info
