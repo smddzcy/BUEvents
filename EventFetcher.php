@@ -54,9 +54,9 @@ class EventFetcher
      */
     public function fetchAllEvents()
     {
-        $fbPageNames = self::$db->getClubNames();
+        $fbPageNames = self::$db->getClubs();
         foreach ($fbPageNames as $fbPageName) {
-            $this->fetchEvents($fbPageName);
+            $this->fetchEvents($fbPageName[0]);
         }
         return $this->events;
     }

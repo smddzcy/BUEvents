@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="429373a4-4026-4fdb-bf0a-ce6f4eb24028" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/index.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_alerts.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_buttons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_carousel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_checkbox-radio.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_collapse.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_datepicker.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_dropdown.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_images.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_inputs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_labels.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_misc.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_modal.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_navbars.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_progress-bars.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_responsive.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_sections.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_sliders.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_tabs-navs-pagination.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_tooltips-and-popovers.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_typography.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_buttons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_inputs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_labels.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_navbars.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_tabs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_transparency.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/ct-paper/mixins/_vendor-prefixes.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/assets/sass/examples.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AjaxHandler.php" afterPath="$PROJECT_DIR$/AjaxHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config.php" afterPath="$PROJECT_DIR$/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventDB.php" afterPath="$PROJECT_DIR$/EventDB.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventFetcher.php" afterPath="$PROJECT_DIR$/EventFetcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/assets/css/cards.css" afterPath="$PROJECT_DIR$/view/assets/css/cards.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/assets/css/datepicker.css" afterPath="$PROJECT_DIR$/view/assets/css/datepicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/assets/css/template.css" afterPath="$PROJECT_DIR$/view/assets/css/template.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/assets/js/checkbox.js" afterPath="$PROJECT_DIR$/view/assets/js/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/assets/js/process.js" afterPath="$PROJECT_DIR$/view/assets/js/process.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/assets/js/template.js" afterPath="$PROJECT_DIR$/view/assets/js/template.js" />
     </list>
     <ignored path="BUEvents.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +37,62 @@
     <favorites_list name="BUEvents" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="EventFetcher.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EventFetcher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3201058">
+              <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventDB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventDB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.958333">
+              <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
+              <folding>
+                <marker date="1457297748000" expanded="true" signature="1662:1688" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="5391:5428" placeholder="SELECT fbpag... pages" />
+                <marker date="1457297748000" expanded="true" signature="5664:5681" placeholder="SELECT fbpag... pages" />
+                <marker date="1457297748000" expanded="true" signature="5664:5691" placeholder="SELECT name categories" />
+                <marker date="1457297748000" expanded="true" signature="6085:6147" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="6085:6148" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="6085:6186" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="6891:6934" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="6891:6935" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="6891:6973" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="7408:7450" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="7408:7451" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="7408:7489" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="8104:8401" placeholder="UPDATE event... " />
+                <marker date="1457297748000" expanded="true" signature="8528:8794" placeholder="INSERT INTO events... " />
+                <marker date="1457297748000" expanded="true" signature="8793:8794" placeholder="INSERT INTO events... " />
+                <marker date="1457297748000" expanded="true" signature="10534:10569" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="10548:10569" placeholder="DELETE FROM " />
+                <marker date="1457297748000" expanded="true" signature="10878:10898" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="10878:10899" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="10878:10937" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="11252:11317" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="11252:11318" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="11252:11325" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="11252:11326" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="11252:11331" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="11892:11925" placeholder="DELETE FROM " />
+                <marker date="1457297748000" expanded="true" signature="12194:12221" placeholder="SELECT COUNT... events" />
+                <marker date="1457297748000" expanded="true" signature="12717:12753" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="12717:12754" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="12717:12759" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="12717:12760" placeholder="SELECT * FRO... events" />
+                <marker date="1457297748000" expanded="true" signature="12717:12798" placeholder="SELECT * FRO... events" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,7 +119,6 @@
         <option value="$PROJECT_DIR$/view/assets/js/template.js" />
         <option value="$PROJECT_DIR$/view/index.html" />
         <option value="$PROJECT_DIR$/Config.php" />
-        <option value="$PROJECT_DIR$/EventFetcher.php" />
         <option value="$PROJECT_DIR$/view/assets/css/template.css" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/todo" />
@@ -116,6 +127,7 @@
         <option value="$PROJECT_DIR$/view/index.php" />
         <option value="$PROJECT_DIR$/AjaxHandler.php" />
         <option value="$PROJECT_DIR$/view/assets/js/process.js" />
+        <option value="$PROJECT_DIR$/EventFetcher.php" />
       </list>
     </option>
   </component>
@@ -321,7 +333,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456870359042</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="last working version">
+      <created>1457443740846</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1457443740846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -339,15 +357,15 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28913963" sideWeight="0.48175183" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2788321" sideWeight="0.5133991" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32503888" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24541607" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3737226" sideWeight="0.48660085" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33568406" sideWeight="0.5182482" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39854014" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -367,14 +385,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2788321" sideWeight="0.5133991" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39854014" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3737226" sideWeight="0.48660085" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32605305" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28913963" sideWeight="0.48175183" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32605305" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32503888" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24541607" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33568406" sideWeight="0.5182482" order="2" side_tool="true" content_ui="tabs" />
@@ -394,7 +412,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cards + footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="cards + footer" />
+    <MESSAGE value="last working version" />
+    <option name="LAST_COMMIT_MESSAGE" value="last working version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -888,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EventDB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10152284">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="9" />
+        <state vertical-scroll-proportion="-14.958333">
+          <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
           <folding>
             <marker date="1457297748000" expanded="true" signature="1662:1688" placeholder="SELECT * FRO... events" />
             <marker date="1457297748000" expanded="true" signature="5391:5428" placeholder="SELECT fbpag... pages" />
@@ -930,8 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EventFetcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64467007">
-          <caret line="83" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="1" />
+        <state vertical-scroll-proportion="1.3201058">
+          <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
           <folding />
         </state>
       </provider>
