@@ -108,7 +108,7 @@ function setListingType(type) {
 
 function moreEvents() {
     if (events.length > 0) {
-        if (events.length < itemsAtPage) deleteMoreEventsButton();
+        if (events.length <= itemsAtPage) deleteMoreEventsButton();
         else if (moreEventsDeleted === true) putMoreEventsButton();
         var itemsToRemove = events.length < itemsAtPage ? events.length : itemsAtPage;
         appendEvents(events.splice(0, itemsToRemove));
@@ -118,13 +118,7 @@ function moreEvents() {
         date: [getTodayDate(), null],
         sort: "SORTBYTIME_ASC"
     });
-    if (events.length === itemsAtPage) {
-        appendEvents(events);
-        events = [];
-        deleteMoreEventsButton();
-    } else {
-        moreEvents();
-    }
+    moreEvents();
 }
 
 function deleteMoreEventsButton() {
