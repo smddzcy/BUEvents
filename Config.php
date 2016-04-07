@@ -20,9 +20,10 @@ class Config
      * Facebook stuff
      */
 
-    const FB_APPID = "232079303795149";
-    const FB_APPSECRET = "e94707b04560ef567adc9666dc09ca63";
-    const FB_ACCESSTOKEN = "CAADTEyx2Yc0BAOdsreOVS3CnN3ZC34eggW86cHhGOjzWbp98TkLixZCpTv5H47XUIBmk5RJXFWCmD9UW8Q9c1FFm7pIBCJT6IjE7JZAKpiZAxgJZCes7E3lOroG3UhdpK1PkZCcdQ1w8lcaNKV9HZBLBSyQeTDAUNHmivguUfnqy6axMMkm0wviuK3nADeYRtsZD";
+    // TODO: Implement auto access token generator
+    const FB_APPID = "";
+    const FB_APPSECRET = "";
+    const FB_ACCESSTOKEN = "ACCESS-TOKEN";
 
     /**
      * Don't change if the app is OK
