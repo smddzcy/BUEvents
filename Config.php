@@ -11,7 +11,7 @@ class Config
     const DB_HOST = "localhost";
     const DB_PORT = 3306;
     const DB_USER = "root";
-    const DB_PASS = "pass";
+    const DB_PASS = "1233211";
     const DB_NAME = "buevents";
     const DB_TYPE = "mysql";
     const DB_CHARSET = "utf8";
@@ -23,7 +23,7 @@ class Config
     // TODO: Implement auto access token generator
     const FB_APPID = "";
     const FB_APPSECRET = "";
-    const FB_ACCESSTOKEN = "token";
+    const FB_ACCESSTOKEN = "EAADTEyx2Yc0BAIO5CEwnoslrpH4b7N2SAKiE7hozZCtcjvuKlcI5gCceyXWynnErFGmAEHEHrnfh5LPWheHpA567bXqOxZC40mOdmEjHTRyONShELpAYChs6wOeP6O4ZAUN3gPPXFxUmBnZCchZCn";
     const FB_EVENT_SEARCHQUERIES = ["bogazici universite", "bogazici universitesi guney kampus", "bogazici universitesi kuzey kampus", "ibrahim bodur oditoryumu bogazici", "bogazici universitesi garanti", "albert long hall", "bogazici universitesi demir demirgil", "bogazici universitesi kennedy", "bümed"];
 
     /**
