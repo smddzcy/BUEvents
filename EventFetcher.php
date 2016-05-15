@@ -17,24 +17,82 @@ class EventFetcher
         self::$db = new EventDB();
     }
 
-    public function buildUrl(String $pageName)
+    /**
+     * Builds Facebook Graph API URL for getting events of a page
+     *
+     * @param string $pageName Page name
+     * @return string URL
+     */
+    public function buildUrlByPage(string $pageName)
     {
-        return sprintf(Config::FB_URL_GRAPHAPI, $pageName, Config::FB_ACCESSTOKEN);
+        return sprintf(Config::FB_GRAPHAPI, urlencode($pageName), Config::FB_ACCESSTOKEN);
+    }
+
+    /**
+     * Builds Facebook Graph API URL for searching an event
+     *
+     * @param string $searchQuery Search query
+     * @return string URL
+     */
+    public function buildUrlBySearch(string $searchQuery)
+    {
+        return sprintf(Config::FB_GRAPHAPI_SEARCH, urlencode($searchQuery), Config::FB_ACCESSTOKEN);
     }
 
     /**
      * Fetch events from a Facebook page
      *
-     * @param String $pageName Facebook page ID
+     * @param string $pageName Facebook page ID
      * @return array|bool Array of events, or FALSE on failure
      */
-    public function fetchEvents(String $pageName)
+    public function fetchEventsByPage(string $pageName)
     {
-        $pageData = self::$curlHandler->get($this->buildUrl($pageName));
-        $pageData = json_decode($pageData, true);
-        if (!array_key_exists("events", $pageData) || !array_key_exists("data", $pageData["events"])) return false;
+        $eventData = self::$curlHandler->get($this->buildUrlByPage($pageName));
+        $eventData = json_decode($eventData, true);
+        if (array_key_exists("events", $eventData)) $eventData = $eventData["events"];
+
+        return $this->processEvents($pageName, $eventData);
+    }
+
+    /**
+     * Fetch events from Facebook with a search query
+     *
+     * @param string $searchQuery Search query
+     * @return array|bool Array of events, or FALSE on failure
+     */
+    public function fetchEventsBySearch(string $searchQuery)
+    {
+        $eventData = self::$curlHandler->get($this->buildUrlBySearch($searchQuery));
+        $eventData = json_decode($eventData, true);
+        while (array_key_exists("paging", $eventData) && array_key_exists("next", $eventData["paging"])) {
+            $nextData = json_decode(self::$curlHandler->get($eventData["paging"]["next"]), true);
+
+            if (array_key_exists("data", $nextData)) {
+                $eventData["data"] = array_merge($eventData["data"], $nextData["data"]);
+            }
+
+            if (array_key_exists("paging", $nextData)) {
+                $eventData["paging"] = $nextData["paging"];
+            } else {
+                unset($eventData["paging"]);
+            }
+        }
+        $eventData["data"] = array_unique($eventData["data"], SORT_REGULAR); // better do it here than on database
+
+        return $this->processEvents("Unknown Host", $eventData);
+    }
+
+    /**
+     * @param string $pageName
+     * @param $eventData
+     * @return array|bool
+     */
+    public function processEvents(string $pageName, $eventData)
+    {
+        if (!array_key_exists("data", $eventData)) return false; // no data
+
         $events = [];
-        foreach ($pageData["events"]["data"] as $eventData) {
+        foreach ($eventData["data"] as $eventData) {
             if (array_key_exists("start_time", $eventData)) {
                 $eventData["start_time"] = date("Y-m-d H:i:s", strtotime($eventData["start_time"]));
             }
@@ -56,7 +114,10 @@ class EventFetcher
     {
         $fbPageNames = self::$db->getClubs();
         foreach ($fbPageNames as $fbPageName) {
-            $this->fetchEvents($fbPageName[0]);
+            $this->fetchEventsByPage($fbPageName[0]);
+        }
+        foreach (Config::FB_EVENT_SEARCHQUERIES as $searchQuery) {
+            $this->fetchEventsBySearch($searchQuery);
         }
         return $this->events;
     }
