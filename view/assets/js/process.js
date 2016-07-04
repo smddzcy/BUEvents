@@ -15,6 +15,7 @@ eventCount = 0; // event count on the page
 eventArea = $("#events"); // event area
 modalArea = $("#modals"); // modal area
 moreEventsField = '<div class="well well-md text-center"> <h3>More Events &nbsp;<i class="fa fa-arrow-circle-down"></i></h3> <!-- a fucking credit to @onrcskn  --> </div>';
+noFutureEventField = '<div class="well well-md text-center"><h3>Not a single event found, sorry.</h3></div>';
 
 function process(funcName, data) {
     var ret;
@@ -118,6 +119,12 @@ function moreEvents() {
         date: [getTodayDate(), null],
         sort: "SORTBYTIME_ASC"
     });
+    if(events.length == 0){
+        clearEvents();
+        document.getElementById('more-events').innerHTML = noFutureEventField;
+        moreEventsDeleted = true;
+        return; // no future event.
+    }
     moreEvents();
 }
 
