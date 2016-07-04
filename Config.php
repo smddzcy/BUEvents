@@ -21,11 +21,14 @@ class Config
      */
 
     // TODO: Implement auto access token generator
+
+    // For now, generate manually:
+    // https://developers.facebook.com/tools/explorer/232079303795149
+    // http://www.slickremix.com/facebook-60-day-user-access-token-generator/
     const FB_APPID = "";
     const FB_APPSECRET = "";
-    const FB_ACCESSTOKEN = "EAADTEyx2Yc0BAIO5CEwnoslrpH4b7N2SAKiE7hozZCtcjvuKlcI5gCceyXWynnErFGmAEHEHrnfh5LPWheHpA567bXqOxZC40mOdmEjHTRyONShELpAYChs6wOeP6O4ZAUN3gPPXFxUmBnZCchZCn";
+    const FB_ACCESSTOKEN = "EAADTEyx2Yc0BAPpqbzzAqMWCCwZBzy7IMpZCJ7L4S9pVQfWy7FYJsGeppyKrKYHQ3jd2xanrMlsU4A81wWjYWZAb1klPJyx67rsIXXoS6ZAlXZCYCbHUtZBQE0ZB97VLNYEbOsFdarJ6nxbeZBSUGZCVM12SGOZBKuNZBwZD";
     const FB_EVENT_SEARCHQUERIES = ["bogazici universite", "bogazici universitesi guney kampus", "bogazici universitesi kuzey kampus", "ibrahim bodur oditoryumu bogazici", "bogazici universitesi garanti", "albert long hall", "bogazici universitesi demir demirgil", "bogazici universitesi kennedy", "bümed"];
-
     /**
      * Don't change if the app is OK
      */
