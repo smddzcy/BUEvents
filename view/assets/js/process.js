@@ -224,7 +224,7 @@ function appendEvents(events) {
         '<small id="ownerModalText"> ' + events[i].owner + '</small>' +
         '</div>' +
         '<div class="col-xs-12 col-sm-12 col-md-7 col-lg-6" style="padding: 0; margin: 0;">' +
-        '<h6 style="display: inline-block;">Attending count: </h6>' +
+        '<h6 style="display: inline-block;">Attendee count: </h6>' +
         '<small id="attendingCountModalText"> ' + events[i].attending_count + '</small>' +
         '</div>' +
         '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0; margin: 10px 0 10px 0;">' +
