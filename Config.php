@@ -27,7 +27,7 @@ class Config
     // http://www.slickremix.com/facebook-60-day-user-access-token-generator/
     const FB_APPID = "";
     const FB_APPSECRET = "";
-    const FB_ACCESSTOKEN = "EAADTEyx2Yc0BAPpqbzzAqMWCCwZBzy7IMpZCJ7L4S9pVQfWy7FYJsGeppyKrKYHQ3jd2xanrMlsU4A81wWjYWZAb1klPJyx67rsIXXoS6ZAlXZCYCbHUtZBQE0ZB97VLNYEbOsFdarJ6nxbeZBSUGZCVM12SGOZBKuNZBwZD";
+    const FB_ACCESSTOKEN = "EAADTEyx2Yc0BAPtrKQZA7arc9eTVdTnWqIoPn3c1tveveCD1aqHTc9c0G6GUp8iI42Rpk4BLI5LRuZA44EONr1c0eAqerqL97VpCvAH7RVogHFGU62uBveEcKLDHArBLPbaQ2HfH504f7MsPHirOegiZB3CF24ZD";
     const FB_EVENT_SEARCHQUERIES = ["bogazici universite", "bogazici universitesi guney kampus", "bogazici universitesi kuzey kampus", "ibrahim bodur oditoryumu bogazici", "bogazici universitesi garanti", "albert long hall", "bogazici universitesi demir demirgil", "bogazici universitesi kennedy", "bümed"];
     /**
      * Don't change if the app is OK
