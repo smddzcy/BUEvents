@@ -1330,7 +1330,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .card[data-background="image"] {
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .card[data-background="image"] .filter {
