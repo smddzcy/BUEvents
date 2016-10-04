@@ -718,7 +718,7 @@ input.ct-red+span.switch-left, input.ct-red+span+label+span.switch-right {
   color: #66615B;
 }
 
-.btn-neutral:active, .btn-neutral.active, .open>.btn-neutral.dropdown-toggle {
+.btn-neutral:active, .btn-neutral.active, .btn-neutral:focus, .open>.btn-neutral.dropdown-toggle {
   background-color: #FFFFFF;
   color: #66615B;
 }

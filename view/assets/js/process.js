@@ -179,10 +179,8 @@ function appendEvents(events) {
 
       var eventGridData = "<!-- event -->" +
         '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="card text-center" data-background="image">' +
-        '<div style="background: url(' + events[i].cover.source +
-        ') repeat-x; background-size: cover; width:100%; height:100%; position:absolute; opacity: 0.6; -webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);"></div>' + // blurry back bg
-        '<div style="background-image: url(' + events[i].cover.source +
-        '); background-size: contain; background-position: 50% 50%; background-repeat:no-repeat; width:100%; height:100%; position:absolute;"></div>' + // front bg
+        '<div class="card-blurred-bg" style="background: url(' + events[i].cover.source + ') repeat-x;"></div>' +
+        '<div class="card-bg" style="background-image: url(' + events[i].cover.source + ');"></div>' + // front bg
         '<div class="header title title-modern text-left" style="margin-left:20px;">' + startDate + ' - ' + startHour +
         '</div>' +
         '<div class="footer btn-center">' +
@@ -191,10 +189,10 @@ function appendEvents(events) {
         '</i></h5>' +
         '<a class="btn btn-neutral btn-round btn-modern" href="' + events[i].ticket_uri +
         '" target="_blank">Get a Ticket</a>' +
-        '<button class="btn btn-neutral btn-round btn-modern details" id="event' + eventCount + '" mapid="map' +
+        '<div class="btn btn-neutral btn-round btn-modern details" id="event' + eventCount + '" mapid="map' +
         eventCount + '" lat="' + events[i].place.location.latitude + '" lng="' + events[i].place.location.longitude +
         '" data-toggle="modal" data-target="#detail' + eventCount +
-        '" style="margin-left:10px">&nbsp; Details &nbsp;</button>' +
+        '" style="margin-left:10px">&nbsp; Details &nbsp;</div>' +
         '</div>' +
         '<div class="filter filter-blue"></div>' +
         '</div></div>' +
