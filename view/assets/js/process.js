@@ -162,13 +162,10 @@ function appendEvents(events) {
           source: ""
         };
       }
-      if (events[i].place === undefined) {
-        events[i].place = {};
-        if (!events[i].place.hasOwnProperty('name')) {
-          events[i].place = {
-            name: "Contact the host for information."
-          };
-        }
+      if (events[i].place === undefined || events[i].place === null) {
+        events[i].place = {
+          name: "Contact the host for information."
+        };
       }
       if (!events[i].place.hasOwnProperty("location") || !events[i].place.location.hasOwnProperty("latitude") || !
         events[i].place.location.hasOwnProperty("longitude")) {
