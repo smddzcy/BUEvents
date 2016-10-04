@@ -1,7 +1,7 @@
 <?php
 const BASEURL = "http://localhost/BUEvents/view/";
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -107,8 +107,10 @@ const BASEURL = "http://localhost/BUEvents/view/";
                 <h6 style="margin-top:22px">Filter</h6>
             </div>
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                <button type="button" class="btn btn-lg btn-fill" id="filterToggle"
-                        style="margin-top:5px; padding: 10px 20px;">Show Filters <span class="caret"></span></button>
+                <button type="button" class="btn btn-lg btn-fill" id="showFilters"
+                        style="margin-top:5px; padding: 10px 20px;">Show Filters <span class="fa fa-caret-down"></span></button>
+                <button type="button" class="btn btn-lg btn-fill hidden" id="hideFilters"
+                style="margin-top:5px; padding: 10px 20px;">Hide Filters <span class="fa fa-caret-up"></span></button>
             </div>
         </div>
         <!-- end filter -->
