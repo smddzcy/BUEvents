@@ -242,7 +242,6 @@ function appendEvents(events) {
         '<a type="button" class="btn btn-default btn-simple" href="' + events[i].ticket_uri +
         '" target="_blank">Get a Ticket</a>' +
         '</div>' +
-        '<div class="divider"></div>' +
         '<div class="right-side">' +
         '<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>' +
         '</div> </div> </div> </div> </div>' +
