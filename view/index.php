@@ -15,8 +15,6 @@ const BASEURL = "http://localhost/BUEvents/view/";
     <link href="<?php echo BASEURL; ?>assets/css/cards.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <link href="<?php echo BASEURL; ?>assets/css/template.css" rel="stylesheet"/>
-
-    <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link
         href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700'
@@ -26,9 +24,6 @@ const BASEURL = "http://localhost/BUEvents/view/";
 
 </head>
 <body>
-
-
-<!--    navbar come here          -->
 
 <div id="navbar">
     <nav class="navbar navbar-default" role="navigation" style="padding-top: 3px;height: 70px;margin-bottom: 0;">
@@ -146,7 +141,7 @@ const BASEURL = "http://localhost/BUEvents/view/";
                         <label for="start_time" style="padding-top:7px"><h6>FROM:</h6></label>
                     </div>
                     <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9">
-                        <input class="datepicker form-control" type="text" id="start_time" placeholder="Today" date-format="DD-MM-YYYY"/>
+                        <input class="datepicker form-control" type="text" id="start_time" placeholder="Today" date-format="DD/MM/YYYY"/>
                     </div>
                 </div>
                 <div class="row">
@@ -155,7 +150,7 @@ const BASEURL = "http://localhost/BUEvents/view/";
                         <label for="end_time" style="padding-top:7px"><h6>TO: </h6></label>
                     </div>
                     <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9">
-                        <input class="datepicker form-control" type="text" id="end_time" placeholder="30/12/2100" date-format="DD-MM-YYYY"/>
+                        <input class="datepicker form-control" type="text" id="end_time" placeholder="30/12/2100" date-format="DD/MM/YYYY"/>
                     </div>
                 </div>
             </div>

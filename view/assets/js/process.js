@@ -376,7 +376,7 @@ $(document).ready(function() {
     var st = $('#start_time');
     var s = st.val();
     if (st.attr('date-format').substr(0, 4) != 'YYYY') {
-      var delimiter = st.attr('date-format').substr(4, 1);
+      var delimiter = st.attr('date-format').substr(2, 1);
       s = s.split(delimiter).reverse().join(delimiter);
     }
     var e = $('#end_time').val().split("/").reverse().join("/");
