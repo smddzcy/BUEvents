@@ -146,7 +146,7 @@ const BASEURL = "http://localhost/BUEvents/view/";
                         <label for="start_time" style="padding-top:7px"><h6>FROM:</h6></label>
                     </div>
                     <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9">
-                        <input class="datepicker form-control" type="text" id="start_time" placeholder="Today"/>
+                        <input class="datepicker form-control" type="text" id="start_time" placeholder="Today" date-format="DD-MM-YYYY"/>
                     </div>
                 </div>
                 <div class="row">
@@ -155,7 +155,7 @@ const BASEURL = "http://localhost/BUEvents/view/";
                         <label for="end_time" style="padding-top:7px"><h6>TO: </h6></label>
                     </div>
                     <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9">
-                        <input class="datepicker form-control" type="text" id="end_time" placeholder="30/12/2100"/>
+                        <input class="datepicker form-control" type="text" id="end_time" placeholder="30/12/2100" date-format="DD-MM-YYYY"/>
                     </div>
                 </div>
             </div>

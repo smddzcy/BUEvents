@@ -157,12 +157,12 @@ function appendEvents(events) {
         endDate = parseDate(endDate[0]);
       }
 
-      if (events[i].cover === undefined || !events[i].cover.hasOwnProperty('source')) {
+      if (!(events[i].cover instanceof Object) || !events[i].cover.hasOwnProperty('source')) {
         events[i].cover = {
           source: ""
         };
       }
-      if (events[i].place === undefined || events[i].place === null) {
+      if (!(events[i].place instanceof Object)) {
         events[i].place = {
           name: "Contact the host for information."
         };
@@ -303,6 +303,8 @@ function parseDate(date) {
 }
 
 $(document).ready(function() {
+  putMobileNativeDateSelector();
+
   var clubDivider = $('ul[aria-labelledby="clubs"]').find('li[class="divider"]');
   var catDivider = $('ul[aria-labelledby="categories"]').find('li[class="divider"]');
   var i1 = 3;
@@ -371,7 +373,12 @@ $(document).ready(function() {
   });
 
   $("#filter").on("click", function() {
-    var s = $('#start_time').val().split("/").reverse().join("/");
+    var st = $('#start_time');
+    var s = st.val();
+    if (st.attr('date-format').substr(0, 4) != 'YYYY') {
+      var delimiter = st.attr('date-format').substr(4, 1);
+      s = s.split(delimiter).reverse().join(delimiter);
+    }
     var e = $('#end_time').val().split("/").reverse().join("/");
     events = process("filter", {
       clubs: checkedClubs,
@@ -441,5 +448,19 @@ function putEvents() {
   } else {
     clearEvents();
     moreEvents();
+  }
+}
+
+function putMobileNativeDateSelector() {
+  if (window.innerWidth < 768) {
+    var s = $('#start_time');
+    s.replaceWith(
+      '<input class="datepicker form-control" type="date" id="start_time" placeholder="Today" date-format="YYYY-MM-DD"/>'
+    );
+
+    var e = $('#end_time');
+    e.replaceWith(
+      '<input class="datepicker form-control" type="date" id="end_time" placeholder="2100-12-30" date-format="YYYY-MM-DD"/>'
+    );
   }
 }
