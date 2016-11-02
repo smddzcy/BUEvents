@@ -2,11 +2,6 @@
 
 /**
  * Class CurlRequest
- *
- * @author Samed Düzçay <samedduzcay@gmail.com>
- *
- * @description Makes cURL requests.
- *
  */
 
 class CurlRequest

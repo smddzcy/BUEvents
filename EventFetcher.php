@@ -93,12 +93,22 @@ class EventFetcher
 
         $events = [];
         foreach ($eventData["data"] as $eventData) {
+            // Filter out the events from other countries
+            $hasCountryData = array_key_exists("place", $eventData) &&
+              array_key_exists("location", $eventData["place"]) &&
+              array_key_exists("country", $eventData["place"]["location"]);
+            if($hasCountryData && $eventData["place"]["location"]["country"] != "Turkey") {
+              continue;
+            }
+
+            // Set start and end times of the event, if they exist
             if (array_key_exists("start_time", $eventData)) {
                 $eventData["start_time"] = date("Y-m-d H:i:s", strtotime($eventData["start_time"]));
             }
             if (array_key_exists("end_time", $eventData)) {
                 $eventData["end_time"] = date("Y-m-d H:i:s", strtotime($eventData["end_time"]));
             }
+
             $event = new Event($eventData);
             $events[] = $event;
         }
