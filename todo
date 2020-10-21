@@ -1,4 +1,0 @@
-todo: implement the club admin page ui
-    -   add event, see old events, see attendees and stuff. simple admin panel
-todo: give each club a default category
-todo: auto generate the access token - it must be renewed every 60 days and hardcoded

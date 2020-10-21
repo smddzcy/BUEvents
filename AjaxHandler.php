@@ -1,6 +1,9 @@
 <?php
 require_once "Config.php";
-if (!array_key_exists("function", $_POST)) die();
+
+if (!array_key_exists("function", $_POST)) {
+  die();
+}
 $func = $_POST["function"];
 
 switch ($func) {
